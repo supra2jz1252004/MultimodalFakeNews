@@ -1,0 +1,47 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# Credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Research datasets and outputs
+data/
+results/
+*.csv
+*.tsv
+*.jsonl
+*.parquet
+*.pkl
+*.pickle
+
+# Generated features and model weights
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.npy
+*.safetensors
+models/final/
+models/research_extension/
+models/search/
+models/smoke/
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+
+# Local development files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

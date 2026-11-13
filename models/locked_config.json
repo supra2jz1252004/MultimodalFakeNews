@@ -1,0 +1,62 @@
+{
+  "config": {
+    "dimension": 128,
+    "dropout": 0.3,
+    "lr": 0.001,
+    "weight_decay": 0.0001
+  },
+  "budget": {
+    "batch_size": 128,
+    "epochs": 40,
+    "patience": 7,
+    "optimizer": "AdamW",
+    "criterion": "validation macro_f1; validation loss tie-break",
+    "threads": 6
+  },
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "search_seed": 42,
+  "candidates": [
+    {
+      "dimension": 128,
+      "dropout": 0.3,
+      "lr": 0.0003,
+      "weight_decay": 0.0001
+    },
+    {
+      "dimension": 128,
+      "dropout": 0.3,
+      "lr": 0.001,
+      "weight_decay": 0.0001
+    },
+    {
+      "dimension": 256,
+      "dropout": 0.3,
+      "lr": 0.0003,
+      "weight_decay": 0.0001
+    },
+    {
+      "dimension": 128,
+      "dropout": 0.5,
+      "lr": 0.0003,
+      "weight_decay": 0.001
+    }
+  ],
+  "selected_config_index": 1,
+  "selection_rule": "highest mean validation Macro-F1 across matched baseline and proposed; earliest configuration breaks ties",
+  "selected_validation_mean_macro_f1": 0.8529898390989453,
+  "manifest_sha256": "60aeb7e8a04a0296d92e6d5670de1396ae35037a84331c428ab25bf753450edb",
+  "primary_paired_seed": 42,
+  "positive_class": {
+    "label": 0,
+    "name": "fake"
+  },
+  "test_use": "No test predictions or metrics used for selection. All listed models/seeds and paired analyses prespecified.",
+  "bootstrap_repetitions": 5000,
+  "bootstrap_seed": 20260916,
+  "normalization": "Per-coordinate z-score for all features fit only on training rows; standard deviation floor 1e-6",
+  "runtime_seconds": 139.4818763000003
+}

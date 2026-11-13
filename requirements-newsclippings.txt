@@ -1,0 +1,3 @@
+# No new packages or shared version changes. Reuse the existing pinned environment.
+# This extension uses numpy, pandas, scipy, scikit-learn, requests, Pillow, matplotlib, torch, torchvision, transformers.
+-r requirements.txt
