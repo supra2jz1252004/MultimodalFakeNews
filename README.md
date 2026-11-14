@@ -147,18 +147,20 @@ Mean Macro-F1 change: +2.476 percentage points. Primary-seed paired 95% interval
 
 ## Publication evidence and reproducibility
 
-The [publication evidence index](publication/README.md) and [aggregate results JSON](publication/aggregate_results.json) provide machine-readable tables derived from existing project documentation, with source-path provenance. These are not original experimental result files or recomputed statistics. Original trained checkpoints and saved machine-generated outputs have not yet been publicly released; release requires a local artifact inventory and permission/safety review. Restricted VERITE data must not be committed.
+The [publication evidence index](publication/README.md) and [aggregate results JSON](publication/aggregate_results.json) provide machine-readable tables derived from existing project documentation, with source-path provenance. These are not original experimental result files or recomputed statistics. The [research-artifacts-v1 Release](https://github.com/supra2jz1252004/MultimodalFakeNews/releases/tag/research-artifacts-v1) now provides 68 approved original saved artifacts, including trained project heads, train-only normalizers and aggregate outputs. These are distinct from the table-derived JSON. Public download and SHA-256 checks passed; [release scope and reproduction limits](publication/README.md#excluded-files-and-reproduction-limits) remain explicit. Restricted VERITE data must not be committed.
 
 ## Dataset and Model Availability
 
 This repository provides the source code, experiment configurations,
 tests, and research documentation for multimodal fake news detection.
 
-Large datasets, downloaded images, cached features, trained checkpoints,
-and generated experiment results are not included.
+Large datasets, downloaded images and cached features are not included.
+Approved trained heads, normalizers and original aggregate results are available
+separately in the versioned Release; binary assets are not committed to Git.
 
-Full experiments require the appropriate datasets and research artifacts
-to be obtained or regenerated separately.
+Exact full replay still requires independently authorized access to the original
+private inputs and excluded dependencies. Re-downloading images or regenerating
+a reference bank does not reproduce the exact historical experiment.
 
 VERITE data is subject to its original access restrictions and is not
 redistributed through this repository.
