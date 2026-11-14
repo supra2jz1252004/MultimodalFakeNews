@@ -10,7 +10,7 @@ This project studies whether image–text correspondence helps a classifier dist
 - [Research gap](docs/current/research_gap.md): the empirical question and its claim boundaries.
 - [Maintainer guide](docs/current/maintainer_guide.md): code map, source locks and safe commands.
 - [Presentation and viva guide](docs/current/presentation_guide.md): a short explanation and questions the team should be able to answer.
-- [Editorial manuscript](manuscript_editorial_20261112/Manuscript_Editorial.docx): a separately versioned language revision. The earlier journal package remains unchanged.
+- Editorial manuscript: maintained separately for faculty review and not included in this code-only repository.
 
 The original CLIP-scalar model improved Fakeddit performance under the saved protocol. On VERITE, its mean Macro-F1 and AUC increased, but accuracy decreased and the primary transfer comparison remained inconclusive. BRAS did not consistently improve the classifiers. Its symmetric score improved the original true-versus-miscaptioned ranking comparison, but is mathematically half-CSLS under matched references. CCR returned the CLIP-augmented baseline for every seed.
 
@@ -22,7 +22,7 @@ The sections below retain the original Fakeddit setup and measured results. Comm
 
 Test whether one paired CLIP cosine-similarity score adds useful information to an otherwise matched BERT + ResNet50 classifier. The primary dataset is **Fakeddit**, using its official multimodal train, validation and public-test resources. Binary labels are **0 = fake, 1 = real**.
 
-The complete primary experiment has run on **50,000 training, 2,500 validation and 2,500 test pairs**. All four models were evaluated across three seeds after validation-only selection. The CLIP-augmented model improved mean Macro-F1; the primary-seed paired bootstrap interval excludes zero. See [the measured results](docs/results_summary.md) and [the full worklog](docs/project_worklog.md).
+The complete primary experiment has run on **50,000 training, 2,500 validation and 2,500 test pairs**. All four models were evaluated across three seeds after validation-only selection. The CLIP-augmented model improved mean Macro-F1; the primary-seed paired bootstrap interval excludes zero. See [the measured results](docs/results_summary.md). The detailed historical worklog is retained outside this code-only repository.
 
 The earlier TruthSeeker investigation is historical only. No TruthSeeker classifier was trained. Its provenance findings remain in `docs/project_worklog.md`; they are not Fakeddit results.
 
@@ -35,7 +35,7 @@ The earlier TruthSeeker investigation is historical only. No TruthSeeker classif
 - Sample candidates deterministically with seed 20260916 and approximate original binary class proportions. Failed images are excluded with explicit reasons; no blank substitutes or filtering by model performance.
 - Fit all feature means and standard deviations using training rows only. Select architecture and checkpoints using validation only. Evaluate test predictions after configuration lock and completion of all prescribed fits.
 
-This is a filtered, availability-dependent subset, not the unfiltered official benchmark. Current image URLs can serve publisher graphics or changed previews; concrete successes and failures are documented in [error observations](docs/error_observations.md). Fakeddit's distant-supervision labels include satire, edited artwork and visual jokes, and are broader than professionally fact-checked news. Exact duplicate checks do not prove that every related event or near-duplicate is absent.
+This is a filtered, availability-dependent subset, not the unfiltered official benchmark. Current image URLs can serve publisher graphics or changed previews; concrete successes and failures were documented in the locally retained error observations, which are not included in this code-only repository. Fakeddit's distant-supervision labels include satire, edited artwork and visual jokes, and are broader than professionally fact-checked news. Exact duplicate checks do not prove that every related event or near-duplicate is absent.
 
 ## Models
 
