@@ -145,6 +145,10 @@ Values are means across seeds 42, 123 and 2026. Fake (0) is the positive class. 
 
 Mean Macro-F1 change: +2.476 percentage points. Primary-seed paired 95% interval: [+1.778, +4.362] points; exact McNemar p=6.73401e-06. See docs/results_summary.md for full protocol, exclusions, statistics, runtime and limitations.
 
+## Publication evidence and reproducibility
+
+The [publication evidence index](publication/README.md) and [aggregate results JSON](publication/aggregate_results.json) provide machine-readable tables derived from existing project documentation, with source-path provenance. These are not original experimental result files or recomputed statistics. Original trained checkpoints and saved machine-generated outputs have not yet been publicly released; release requires a local artifact inventory and permission/safety review. Restricted VERITE data must not be committed.
+
 ## Dataset and Model Availability
 
 This repository provides the source code, experiment configurations,
