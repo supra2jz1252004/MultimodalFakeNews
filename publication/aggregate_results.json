@@ -1,0 +1,998 @@
+{
+  "title": "Reported aggregate results for Multimodal Fake News Detection",
+  "schema_version": 1,
+  "extraction_date": "2026-11-14",
+  "source": "Existing published project documentation at the relative paths in each table",
+  "provenance": "Exact display values transcribed programmatically from Markdown tables in committed project documentation. NOT raw saved experiment output, NOT an independent rerun, and NOT per-record predictions. String values preserve formatting, units, and rounding.",
+  "study_boundaries": "Fakeddit and VERITE use different populations, binary labels and evaluation procedures; within-family ranking, global discrimination and classifier transfer are not interchangeable. Original primary, secondary and exploratory analyses remain distinct.",
+  "privacy": "No third-party images, verbatim caption records, image URLs, record-level predictions, identifiers, or embeddings.",
+  "table_count": 16,
+  "aggregate_row_count": 101,
+  "tables": [
+    {
+      "id": "docs_results_summary_md_table_1",
+      "source_file": "docs/results_summary.md",
+      "section": "Data and acquisition",
+      "columns": [
+        "Official split",
+        "Retained pairs",
+        "Fake (0)",
+        "Real (1)"
+      ],
+      "rows": [
+        {
+          "Official split": "train",
+          "Retained pairs": "50,000",
+          "Fake (0)": "30,312",
+          "Real (1)": "19,688"
+        },
+        {
+          "Official split": "validation",
+          "Retained pairs": "2,500",
+          "Fake (0)": "1,518",
+          "Real (1)": "982"
+        },
+        {
+          "Official split": "test",
+          "Retained pairs": "2,500",
+          "Fake (0)": "1,509",
+          "Real (1)": "991"
+        }
+      ]
+    },
+    {
+      "id": "docs_results_summary_md_table_2",
+      "source_file": "docs/results_summary.md",
+      "section": "Data and acquisition",
+      "columns": [
+        "Candidate exclusion reason",
+        "Count"
+      ],
+      "rows": [
+        {
+          "Candidate exclusion reason": "http_404",
+          "Count": "3,173"
+        },
+        {
+          "Candidate exclusion reason": "duplicate_content_group",
+          "Count": "1,191"
+        },
+        {
+          "Candidate exclusion reason": "removed_image_placeholder",
+          "Count": "419"
+        },
+        {
+          "Candidate exclusion reason": "duplicate_text",
+          "Count": "276"
+        },
+        {
+          "Candidate exclusion reason": "duplicate_image_url",
+          "Count": "72"
+        },
+        {
+          "Candidate exclusion reason": "duplicate_image_content",
+          "Count": "32"
+        },
+        {
+          "Candidate exclusion reason": "uniform_blank_source_image",
+          "Count": "17"
+        },
+        {
+          "Candidate exclusion reason": "ConnectionError",
+          "Count": "15"
+        },
+        {
+          "Candidate exclusion reason": "transfer_over_120_seconds",
+          "Count": "7"
+        },
+        {
+          "Candidate exclusion reason": "http_403",
+          "Count": "4"
+        },
+        {
+          "Candidate exclusion reason": "http_530",
+          "Count": "2"
+        },
+        {
+          "Candidate exclusion reason": "ConnectTimeout",
+          "Count": "2"
+        },
+        {
+          "Candidate exclusion reason": "visually_verified_loading_placeholder",
+          "Count": "1"
+        },
+        {
+          "Candidate exclusion reason": "http_429",
+          "Count": "1"
+        },
+        {
+          "Candidate exclusion reason": "image_decode_UnidentifiedImageError",
+          "Count": "1"
+        },
+        {
+          "Candidate exclusion reason": "http_400",
+          "Count": "1"
+        }
+      ]
+    },
+    {
+      "id": "docs_results_summary_md_table_3",
+      "source_file": "docs/results_summary.md",
+      "section": "Actual test results",
+      "columns": [
+        "Model",
+        "Accuracy",
+        "Fake precision",
+        "Fake recall",
+        "Fake F1",
+        "Macro-F1",
+        "Weighted-F1",
+        "ROC-AUC"
+      ],
+      "rows": [
+        {
+          "Model": "Text Only",
+          "Accuracy": "82.69%",
+          "Fake precision": "83.87%",
+          "Fake recall": "88.31%",
+          "Fake F1": "86.03%",
+          "Macro-F1": "81.64%",
+          "Weighted-F1": "82.55%",
+          "ROC-AUC": "0.9003"
+        },
+        {
+          "Model": "Image Only",
+          "Accuracy": "76.63%",
+          "Fake precision": "80.00%",
+          "Fake recall": "81.71%",
+          "Fake F1": "80.84%",
+          "Macro-F1": "75.44%",
+          "Weighted-F1": "76.56%",
+          "ROC-AUC": "0.8460"
+        },
+        {
+          "Model": "Text + Image",
+          "Accuracy": "85.55%",
+          "Fake precision": "86.65%",
+          "Fake recall": "89.93%",
+          "Fake F1": "88.25%",
+          "Macro-F1": "84.74%",
+          "Weighted-F1": "85.46%",
+          "ROC-AUC": "0.9331"
+        },
+        {
+          "Model": "Text + Image + Similarity",
+          "Accuracy": "87.87%",
+          "Fake precision": "88.76%",
+          "Fake recall": "91.50%",
+          "Fake F1": "90.10%",
+          "Macro-F1": "87.21%",
+          "Weighted-F1": "87.81%",
+          "ROC-AUC": "0.9466"
+        }
+      ]
+    },
+    {
+      "id": "docs_results_summary_md_table_4",
+      "source_file": "docs/results_summary.md",
+      "section": "Actual test results",
+      "columns": [
+        "Model",
+        "Accuracy mean ± SD",
+        "Macro-F1 mean ± SD"
+      ],
+      "rows": [
+        {
+          "Model": "Text Only",
+          "Accuracy mean ± SD": "82.69 ± 0.10%",
+          "Macro-F1 mean ± SD": "81.64 ± 0.13%"
+        },
+        {
+          "Model": "Image Only",
+          "Accuracy mean ± SD": "76.63 ± 0.44%",
+          "Macro-F1 mean ± SD": "75.44 ± 0.47%"
+        },
+        {
+          "Model": "Text + Image",
+          "Accuracy mean ± SD": "85.55 ± 0.49%",
+          "Macro-F1 mean ± SD": "84.74 ± 0.56%"
+        },
+        {
+          "Model": "Text + Image + Similarity",
+          "Accuracy mean ± SD": "87.87 ± 0.86%",
+          "Macro-F1 mean ± SD": "87.21 ± 0.94%"
+        }
+      ]
+    },
+    {
+      "id": "docs_results_summary_md_table_5",
+      "source_file": "docs/results_summary.md",
+      "section": "Actual test results",
+      "columns": [
+        "Model",
+        "Seed",
+        "Parameters",
+        "Best epoch",
+        "Validation Macro-F1",
+        "Test Macro-F1"
+      ],
+      "rows": [
+        {
+          "Model": "Text Only",
+          "Seed": "42",
+          "Parameters": "115,202",
+          "Best epoch": "6",
+          "Validation Macro-F1": "81.32%",
+          "Test Macro-F1": "81.68%"
+        },
+        {
+          "Model": "Text Only",
+          "Seed": "123",
+          "Parameters": "115,202",
+          "Best epoch": "6",
+          "Validation Macro-F1": "81.82%",
+          "Test Macro-F1": "81.49%"
+        },
+        {
+          "Model": "Text Only",
+          "Seed": "2026",
+          "Parameters": "115,202",
+          "Best epoch": "4",
+          "Validation Macro-F1": "81.48%",
+          "Test Macro-F1": "81.75%"
+        },
+        {
+          "Model": "Image Only",
+          "Seed": "42",
+          "Parameters": "279,042",
+          "Best epoch": "4",
+          "Validation Macro-F1": "73.89%",
+          "Test Macro-F1": "75.01%"
+        },
+        {
+          "Model": "Image Only",
+          "Seed": "123",
+          "Parameters": "279,042",
+          "Best epoch": "1",
+          "Validation Macro-F1": "72.87%",
+          "Test Macro-F1": "75.36%"
+        },
+        {
+          "Model": "Image Only",
+          "Seed": "2026",
+          "Parameters": "279,042",
+          "Best epoch": "1",
+          "Validation Macro-F1": "73.20%",
+          "Test Macro-F1": "75.94%"
+        },
+        {
+          "Model": "Text + Image",
+          "Seed": "42",
+          "Parameters": "393,858",
+          "Best epoch": "1",
+          "Validation Macro-F1": "84.16%",
+          "Test Macro-F1": "85.13%"
+        },
+        {
+          "Model": "Text + Image",
+          "Seed": "123",
+          "Parameters": "393,858",
+          "Best epoch": "3",
+          "Validation Macro-F1": "84.01%",
+          "Test Macro-F1": "84.10%"
+        },
+        {
+          "Model": "Text + Image",
+          "Seed": "2026",
+          "Parameters": "393,858",
+          "Best epoch": "3",
+          "Validation Macro-F1": "84.87%",
+          "Test Macro-F1": "84.98%"
+        },
+        {
+          "Model": "Text + Image + Similarity",
+          "Seed": "42",
+          "Parameters": "393,986",
+          "Best epoch": "3",
+          "Validation Macro-F1": "86.44%",
+          "Test Macro-F1": "88.22%"
+        },
+        {
+          "Model": "Text + Image + Similarity",
+          "Seed": "123",
+          "Parameters": "393,986",
+          "Best epoch": "3",
+          "Validation Macro-F1": "85.96%",
+          "Test Macro-F1": "86.35%"
+        },
+        {
+          "Model": "Text + Image + Similarity",
+          "Seed": "2026",
+          "Parameters": "393,986",
+          "Best epoch": "3",
+          "Validation Macro-F1": "86.05%",
+          "Test Macro-F1": "87.06%"
+        }
+      ]
+    },
+    {
+      "id": "docs_results_summary_md_table_6",
+      "source_file": "docs/results_summary.md",
+      "section": "Similarity and paired statistics",
+      "columns": [
+        "Class",
+        "Count",
+        "Mean",
+        "Median",
+        "SD",
+        "Q1",
+        "Q3"
+      ],
+      "rows": [
+        {
+          "Class": "Fake",
+          "Count": "30,312",
+          "Mean": "0.25838",
+          "Median": "0.25579",
+          "SD": "0.05157",
+          "Q1": "0.22033",
+          "Q3": "0.29473"
+        },
+        {
+          "Class": "Real",
+          "Count": "19,688",
+          "Mean": "0.29678",
+          "Median": "0.29887",
+          "SD": "0.04069",
+          "Q1": "0.27186",
+          "Q3": "0.32398"
+        }
+      ]
+    },
+    {
+      "id": "docs_results_summary_md_table_7",
+      "source_file": "docs/results_summary.md",
+      "section": "Error evidence and interpretation",
+      "columns": [
+        "Training-defined similarity band",
+        "Test pairs",
+        "Fake pairs",
+        "C accuracy",
+        "D accuracy",
+        "D−C points"
+      ],
+      "rows": [
+        {
+          "Training-defined similarity band": "High (above train Q3)",
+          "Test pairs": "539",
+          "Fake pairs": "159",
+          "C accuracy": "81.26%",
+          "D accuracy": "86.64%",
+          "D−C points": "+5.38"
+        },
+        {
+          "Training-defined similarity band": "Low (below train Q1)",
+          "Test pairs": "753",
+          "Fake pairs": "670",
+          "C accuracy": "91.10%",
+          "D accuracy": "93.23%",
+          "D−C points": "+2.12"
+        },
+        {
+          "Training-defined similarity band": "Middle",
+          "Test pairs": "1208",
+          "Fake pairs": "680",
+          "C accuracy": "84.85%",
+          "D accuracy": "87.00%",
+          "D−C points": "+2.15"
+        }
+      ]
+    },
+    {
+      "id": "docs_research_extension_verite_executive_summary_md_table_1",
+      "source_file": "docs/research_extension/verite/executive_summary.md",
+      "section": "Executed VERITE evaluation: conclusions and evidence",
+      "columns": [
+        "model",
+        "accuracy_mean",
+        "macro_f1_mean",
+        "roc_auc_truthful_mean",
+        "average_precision_truthful_mean"
+      ],
+      "rows": [
+        {
+          "model": "A",
+          "accuracy_mean": "0.56044",
+          "macro_f1_mean": "0.51485",
+          "roc_auc_truthful_mean": "0.52098",
+          "average_precision_truthful_mean": "0.35992"
+        },
+        {
+          "model": "B",
+          "accuracy_mean": "0.54945",
+          "macro_f1_mean": "0.54123",
+          "roc_auc_truthful_mean": "0.59839",
+          "average_precision_truthful_mean": "0.42994"
+        },
+        {
+          "model": "C",
+          "accuracy_mean": "0.55744",
+          "macro_f1_mean": "0.54444",
+          "roc_auc_truthful_mean": "0.60932",
+          "average_precision_truthful_mean": "0.43690"
+        },
+        {
+          "model": "CCR",
+          "accuracy_mean": "0.54945",
+          "macro_f1_mean": "0.54123",
+          "roc_auc_truthful_mean": "0.59839",
+          "average_precision_truthful_mean": "0.42994"
+        },
+        {
+          "model": "D",
+          "accuracy_mean": "0.54612",
+          "macro_f1_mean": "0.53832",
+          "roc_auc_truthful_mean": "0.61658",
+          "average_precision_truthful_mean": "0.44103"
+        }
+      ]
+    },
+    {
+      "id": "docs_research_extension_verite_model_transfer_results_md_table_1",
+      "source_file": "docs/research_extension/verite/model_transfer_results.md",
+      "section": "Frozen model transfer results",
+      "columns": [
+        "seed",
+        "model",
+        "n",
+        "accuracy",
+        "macro_f1",
+        "roc_auc_truthful",
+        "average_precision_truthful"
+      ],
+      "rows": [
+        {
+          "seed": "42",
+          "model": "A",
+          "n": "1001",
+          "accuracy": "0.57243",
+          "macro_f1": "0.51326",
+          "roc_auc_truthful": "0.52264",
+          "average_precision_truthful": "0.35366"
+        },
+        {
+          "seed": "42",
+          "model": "B",
+          "n": "1001",
+          "accuracy": "0.53846",
+          "macro_f1": "0.53478",
+          "roc_auc_truthful": "0.59839",
+          "average_precision_truthful": "0.43108"
+        },
+        {
+          "seed": "42",
+          "model": "C",
+          "n": "1001",
+          "accuracy": "0.50849",
+          "macro_f1": "0.50849",
+          "roc_auc_truthful": "0.61689",
+          "average_precision_truthful": "0.44424"
+        },
+        {
+          "seed": "42",
+          "model": "D",
+          "n": "1001",
+          "accuracy": "0.52647",
+          "macro_f1": "0.52560",
+          "roc_auc_truthful": "0.61572",
+          "average_precision_truthful": "0.44039"
+        },
+        {
+          "seed": "42",
+          "model": "CCR",
+          "n": "1001",
+          "accuracy": "0.53846",
+          "macro_f1": "0.53478",
+          "roc_auc_truthful": "0.59839",
+          "average_precision_truthful": "0.43108"
+        },
+        {
+          "seed": "123",
+          "model": "A",
+          "n": "1001",
+          "accuracy": "0.54645",
+          "macro_f1": "0.51171",
+          "roc_auc_truthful": "0.52298",
+          "average_precision_truthful": "0.37166"
+        },
+        {
+          "seed": "123",
+          "model": "B",
+          "n": "1001",
+          "accuracy": "0.53746",
+          "macro_f1": "0.53369",
+          "roc_auc_truthful": "0.60384",
+          "average_precision_truthful": "0.43492"
+        },
+        {
+          "seed": "123",
+          "model": "C",
+          "n": "1001",
+          "accuracy": "0.59041",
+          "macro_f1": "0.56565",
+          "roc_auc_truthful": "0.60282",
+          "average_precision_truthful": "0.43907"
+        },
+        {
+          "seed": "123",
+          "model": "D",
+          "n": "1001",
+          "accuracy": "0.53047",
+          "macro_f1": "0.53002",
+          "roc_auc_truthful": "0.62676",
+          "average_precision_truthful": "0.45391"
+        },
+        {
+          "seed": "123",
+          "model": "CCR",
+          "n": "1001",
+          "accuracy": "0.53746",
+          "macro_f1": "0.53369",
+          "roc_auc_truthful": "0.60384",
+          "average_precision_truthful": "0.43492"
+        },
+        {
+          "seed": "2026",
+          "model": "A",
+          "n": "1001",
+          "accuracy": "0.56244",
+          "macro_f1": "0.51957",
+          "roc_auc_truthful": "0.51733",
+          "average_precision_truthful": "0.35444"
+        },
+        {
+          "seed": "2026",
+          "model": "B",
+          "n": "1001",
+          "accuracy": "0.57243",
+          "macro_f1": "0.55520",
+          "roc_auc_truthful": "0.59294",
+          "average_precision_truthful": "0.42382"
+        },
+        {
+          "seed": "2026",
+          "model": "C",
+          "n": "1001",
+          "accuracy": "0.57343",
+          "macro_f1": "0.55917",
+          "roc_auc_truthful": "0.60824",
+          "average_precision_truthful": "0.42737"
+        },
+        {
+          "seed": "2026",
+          "model": "D",
+          "n": "1001",
+          "accuracy": "0.58142",
+          "macro_f1": "0.55935",
+          "roc_auc_truthful": "0.60725",
+          "average_precision_truthful": "0.42878"
+        },
+        {
+          "seed": "2026",
+          "model": "CCR",
+          "n": "1001",
+          "accuracy": "0.57243",
+          "macro_f1": "0.55520",
+          "roc_auc_truthful": "0.59294",
+          "average_precision_truthful": "0.42382"
+        }
+      ]
+    },
+    {
+      "id": "docs_research_extension_verite_model_transfer_results_md_table_2",
+      "source_file": "docs/research_extension/verite/model_transfer_results.md",
+      "section": "Frozen model transfer results",
+      "columns": [
+        "model",
+        "accuracy_mean",
+        "accuracy_std",
+        "macro_f1_mean",
+        "macro_f1_std"
+      ],
+      "rows": [
+        {
+          "model": "A",
+          "accuracy_mean": "0.56044",
+          "accuracy_std": "0.01310",
+          "macro_f1_mean": "0.51485",
+          "macro_f1_std": "0.00416"
+        },
+        {
+          "model": "B",
+          "accuracy_mean": "0.54945",
+          "accuracy_std": "0.01990",
+          "macro_f1_mean": "0.54123",
+          "macro_f1_std": "0.01211"
+        },
+        {
+          "model": "C",
+          "accuracy_mean": "0.55744",
+          "accuracy_std": "0.04323",
+          "macro_f1_mean": "0.54444",
+          "macro_f1_std": "0.03130"
+        },
+        {
+          "model": "CCR",
+          "accuracy_mean": "0.54945",
+          "accuracy_std": "0.01990",
+          "macro_f1_mean": "0.54123",
+          "macro_f1_std": "0.01211"
+        },
+        {
+          "model": "D",
+          "accuracy_mean": "0.54612",
+          "accuracy_std": "0.03063",
+          "macro_f1_mean": "0.53832",
+          "macro_f1_std": "0.01835"
+        }
+      ]
+    },
+    {
+      "id": "docs_research_extension_verite_correspondence_ranking_md_table_1",
+      "source_file": "docs/research_extension/verite/correspondence_ranking.md",
+      "section": "Correspondence ranking, separate from classifier transfer",
+      "columns": [
+        "score",
+        "comparison",
+        "pairs",
+        "ranking",
+        "CI_low",
+        "CI_high",
+        "mean_margin"
+      ],
+      "rows": [
+        {
+          "score": "cosine",
+          "comparison": "miscaptioned",
+          "pairs": "338",
+          "ranking": "0.56509",
+          "CI_low": "0.51479",
+          "CI_high": "0.61607",
+          "mean_margin": "0.00844"
+        },
+        {
+          "score": "cosine",
+          "comparison": "out-of-context",
+          "pairs": "325",
+          "ranking": "0.82154",
+          "CI_low": "0.77846",
+          "CI_high": "0.86154",
+          "mean_margin": "0.04240"
+        },
+        {
+          "score": "m_text",
+          "comparison": "miscaptioned",
+          "pairs": "338",
+          "ranking": "0.65680",
+          "CI_low": "0.60651",
+          "CI_high": "0.70588",
+          "mean_margin": "0.01439"
+        },
+        {
+          "score": "m_text",
+          "comparison": "out-of-context",
+          "pairs": "325",
+          "ranking": "0.82154",
+          "CI_low": "0.77846",
+          "CI_high": "0.86154",
+          "mean_margin": "0.04240"
+        },
+        {
+          "score": "m_image",
+          "comparison": "miscaptioned",
+          "pairs": "338",
+          "ranking": "0.56509",
+          "CI_low": "0.51479",
+          "CI_high": "0.61607",
+          "mean_margin": "0.00844"
+        },
+        {
+          "score": "m_image",
+          "comparison": "out-of-context",
+          "pairs": "325",
+          "ranking": "0.80923",
+          "CI_low": "0.76543",
+          "CI_high": "0.84878",
+          "mean_margin": "0.04045"
+        },
+        {
+          "score": "bras_mean",
+          "comparison": "miscaptioned",
+          "pairs": "338",
+          "ranking": "0.61538",
+          "CI_low": "0.56468",
+          "CI_high": "0.66568",
+          "mean_margin": "0.01142"
+        },
+        {
+          "score": "bras_mean",
+          "comparison": "out-of-context",
+          "pairs": "325",
+          "ranking": "0.82769",
+          "CI_low": "0.78395",
+          "CI_high": "0.86769",
+          "mean_margin": "0.04142"
+        }
+      ]
+    },
+    {
+      "id": "docs_research_extension_verite_correspondence_ranking_md_table_2",
+      "source_file": "docs/research_extension/verite/correspondence_ranking.md",
+      "section": "Correspondence ranking, separate from classifier transfer",
+      "columns": [
+        "category",
+        "BRAS_mean_minus_cosine",
+        "CI_low",
+        "CI_high",
+        "Holm_p",
+        "gained",
+        "lost"
+      ],
+      "rows": [
+        {
+          "category": "miscaptioned",
+          "BRAS_mean_minus_cosine": "0.05030",
+          "CI_low": "0.02065",
+          "CI_high": "0.08284",
+          "Holm_p": "0.00820",
+          "gained": "24",
+          "lost": "7"
+        },
+        {
+          "category": "out-of-context",
+          "BRAS_mean_minus_cosine": "0.00615",
+          "CI_low": "-0.00923",
+          "CI_high": "0.02154",
+          "Holm_p": "0.68003",
+          "gained": "4",
+          "lost": "2"
+        }
+      ]
+    },
+    {
+      "id": "docs_research_extension_verite_correspondence_ranking_md_table_3",
+      "source_file": "docs/research_extension/verite/correspondence_ranking.md",
+      "section": "Correspondence ranking, separate from classifier transfer",
+      "columns": [
+        "score",
+        "ROC_AUC",
+        "AUC_CI_low",
+        "AUC_CI_high",
+        "AP",
+        "AP_CI_low",
+        "AP_CI_high"
+      ],
+      "rows": [
+        {
+          "score": "bras_mean",
+          "ROC_AUC": "0.66238",
+          "AUC_CI_low": "0.63884",
+          "AUC_CI_high": "0.68525",
+          "AP": "0.48130",
+          "AP_CI_low": "0.45883",
+          "AP_CI_high": "0.51175"
+        },
+        {
+          "score": "cosine",
+          "ROC_AUC": "0.66388",
+          "AUC_CI_low": "0.63966",
+          "AUC_CI_high": "0.68679",
+          "AP": "0.47688",
+          "AP_CI_low": "0.45433",
+          "AP_CI_high": "0.50854"
+        },
+        {
+          "score": "m_image",
+          "ROC_AUC": "0.65490",
+          "AUC_CI_low": "0.63140",
+          "AUC_CI_high": "0.67813",
+          "AP": "0.47033",
+          "AP_CI_low": "0.44854",
+          "AP_CI_high": "0.49924"
+        },
+        {
+          "score": "m_text",
+          "ROC_AUC": "0.66438",
+          "AUC_CI_low": "0.64165",
+          "AUC_CI_high": "0.68675",
+          "AP": "0.49061",
+          "AP_CI_low": "0.46700",
+          "AP_CI_high": "0.52201"
+        }
+      ]
+    },
+    {
+      "id": "docs_research_extension_verite_robustness_and_verification_md_table_1",
+      "source_file": "docs/research_extension/verite/robustness_and_verification.md",
+      "section": "Robustness and verification",
+      "columns": [
+        "comparison",
+        "seed",
+        "Macro_F1_CI_low",
+        "Macro_F1_CI_high"
+      ],
+      "rows": [
+        {
+          "comparison": "B − A",
+          "seed": "42",
+          "Macro_F1_CI_low": "-0.00702",
+          "Macro_F1_CI_high": "0.05137"
+        },
+        {
+          "comparison": "D − B",
+          "seed": "42",
+          "Macro_F1_CI_low": "-0.02956",
+          "Macro_F1_CI_high": "0.01150"
+        }
+      ]
+    },
+    {
+      "id": "docs_research_extension_verite_robustness_and_verification_md_table_2",
+      "source_file": "docs/research_extension/verite/robustness_and_verification.md",
+      "section": "Robustness and verification",
+      "columns": [
+        "score",
+        "category",
+        "exact_ties",
+        "strict",
+        "half",
+        "tolerance_1e_6"
+      ],
+      "rows": [
+        {
+          "score": "cosine",
+          "category": "miscaptioned",
+          "exact_ties": "0",
+          "strict": "0.56509",
+          "half": "0.56509",
+          "tolerance_1e_6": "0.56509"
+        },
+        {
+          "score": "cosine",
+          "category": "out-of-context",
+          "exact_ties": "0",
+          "strict": "0.82154",
+          "half": "0.82154",
+          "tolerance_1e_6": "0.82154"
+        },
+        {
+          "score": "m_text",
+          "category": "miscaptioned",
+          "exact_ties": "0",
+          "strict": "0.65680",
+          "half": "0.65680",
+          "tolerance_1e_6": "0.65680"
+        },
+        {
+          "score": "m_text",
+          "category": "out-of-context",
+          "exact_ties": "0",
+          "strict": "0.82154",
+          "half": "0.82154",
+          "tolerance_1e_6": "0.82154"
+        },
+        {
+          "score": "m_image",
+          "category": "miscaptioned",
+          "exact_ties": "0",
+          "strict": "0.56509",
+          "half": "0.56509",
+          "tolerance_1e_6": "0.56509"
+        },
+        {
+          "score": "m_image",
+          "category": "out-of-context",
+          "exact_ties": "0",
+          "strict": "0.80923",
+          "half": "0.80923",
+          "tolerance_1e_6": "0.80923"
+        },
+        {
+          "score": "bras_mean",
+          "category": "miscaptioned",
+          "exact_ties": "0",
+          "strict": "0.61538",
+          "half": "0.61538",
+          "tolerance_1e_6": "0.61538"
+        },
+        {
+          "score": "bras_mean",
+          "category": "out-of-context",
+          "exact_ties": "0",
+          "strict": "0.82769",
+          "half": "0.82769",
+          "tolerance_1e_6": "0.82769"
+        }
+      ]
+    },
+    {
+      "id": "docs_research_extension_verite_robustness_and_verification_md_table_3",
+      "source_file": "docs/research_extension/verite/robustness_and_verification.md",
+      "section": "Robustness and verification",
+      "columns": [
+        "score",
+        "category",
+        "source",
+        "pairs",
+        "ranking_half",
+        "mean_margin"
+      ],
+      "rows": [
+        {
+          "score": "cosine",
+          "category": "miscaptioned",
+          "source": "reuters",
+          "pairs": "78",
+          "ranking_half": "0.64103",
+          "mean_margin": "0.01428"
+        },
+        {
+          "score": "cosine",
+          "category": "miscaptioned",
+          "source": "snopes",
+          "pairs": "260",
+          "ranking_half": "0.54231",
+          "mean_margin": "0.00669"
+        },
+        {
+          "score": "cosine",
+          "category": "out-of-context",
+          "source": "reuters",
+          "pairs": "74",
+          "ranking_half": "0.79730",
+          "mean_margin": "0.03221"
+        },
+        {
+          "score": "cosine",
+          "category": "out-of-context",
+          "source": "snopes",
+          "pairs": "251",
+          "ranking_half": "0.82869",
+          "mean_margin": "0.04540"
+        },
+        {
+          "score": "bras_mean",
+          "category": "miscaptioned",
+          "source": "reuters",
+          "pairs": "78",
+          "ranking_half": "0.67949",
+          "mean_margin": "0.01775"
+        },
+        {
+          "score": "bras_mean",
+          "category": "miscaptioned",
+          "source": "snopes",
+          "pairs": "260",
+          "ranking_half": "0.59615",
+          "mean_margin": "0.00952"
+        },
+        {
+          "score": "bras_mean",
+          "category": "out-of-context",
+          "source": "reuters",
+          "pairs": "74",
+          "ranking_half": "0.81081",
+          "mean_margin": "0.03129"
+        },
+        {
+          "score": "bras_mean",
+          "category": "out-of-context",
+          "source": "snopes",
+          "pairs": "251",
+          "ranking_half": "0.83267",
+          "mean_margin": "0.04441"
+        }
+      ]
+    }
+  ]
+}
